@@ -33,6 +33,7 @@ Ran the playbook using ansible-playbook. The script successfully detected the mi
 ![Playbook Execution Output](playbook_run.png)
 
 *Verification of the hosted site:*
+
 ![Website Verification](web_verify.png)
 
 ## 📂 Project Files
