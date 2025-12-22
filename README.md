@@ -1,14 +1,14 @@
-# Ansible-Web-Server-Automation
-Infrastructure as Code (IaC) project using Ansible to automate Apache web server provisioning on Rocky Linux.
+# Ansible Web Server Automation & Bootstrapping
+Infrastructure as Code (IaC) project utilizing Ansible and Bash scripting to automate Apache web server provisioning and environment bootstrapping.
 
 ## 🎯 Objective
-To eliminate manual server configuration by implementing Infrastructure as Code (IaC). This project uses Ansible to programmatically provision an Apache (HTTPD) web server on Rocky Linux 9, ensuring consistent deployment standards across the environment.
+To eliminate manual server configuration by implementing **Infrastructure as Code (IaC)**. This project uses **Ansible playbooks** for configuration management and **Bash scripting** for environment bootstrapping to provision an Apache (HTTPD) web server on Rocky Linux 9.
 
 ## 🛠 Skills Applied
 - **Infrastructure as Code:** Defined server state (Packages, Services, Content) using YAML playbooks.
-- **Ansible Core:** Configured inventory.ini to manage local and remote endpoints.
-- **System Administration:** Automated the installation of httpd and firewall configuration on RHEL-based systems.
-- **Idempotency:** Designed tasks to check state before execution, preventing redundant changes.
+- **Shell Scripting:** Developed Bash scripts to automate environment pre-flight checks (Root/Dependency validation).
+- **Ansible Core:** Configured `inventory.ini` to manage local and remote endpoints.
+- **System Administration:** Automated the installation of `httpd` and firewall configuration on RHEL-based systems.
 
 ## 💻 Technologies
 -  **Tool:** Ansible Core 2.14+
