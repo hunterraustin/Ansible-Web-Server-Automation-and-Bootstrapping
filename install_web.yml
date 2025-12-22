@@ -1,0 +1,20 @@
+- name: Setup a Web Server
+  hosts: localhost
+  become: yes # This means "Run as Root/Sudo"
+
+  tasks:
+    - name: Install Apache Web Server
+      dnf:
+        name: httpd
+        state: present
+
+    - name: Start the Web Service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Create a custom homepage
+      copy:
+        content: "<h1>Ansible configured this website!</h1>"
+        dest: /var/www/html/index.html
