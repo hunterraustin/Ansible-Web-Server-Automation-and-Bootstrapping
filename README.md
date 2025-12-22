@@ -18,8 +18,10 @@ To eliminate manual server configuration by implementing Infrastructure as Code 
 ## 📝 Project Workflow
 ### 1. Inventory Configuration
 - Defined the target hosts in a static inventory.ini file. For this lab simulation, the scope was restricted to the local controller.
+```ini
 [webservers]
 localhost ansible_connection=local
+```
 
 ### 2. Playbook Development (install_web.yml)
 Wrote a comprehensive playbook to handle the full lifecycle of the web server:
