@@ -29,7 +29,29 @@ Wrote a comprehensive playbook to handle the full lifecycle of the web server:
 - **Service Management:** Ensures the service is started and enabled on boot.
 - **Content Delivery:** Deploys a custom index.html to the web root.
 
-### 3. Execution & Verification
+### 3. Automation Bootstrapping (Bash)
+Created a `setup.sh` wrapper script to handle enviroment pre-flight checks. This cript ensures the user has root privileges and automatically installs Ansible if it is missing, preventing execution failures. 
+
+```bash
+#!/bin/bash
+# 1. Safety Check: Ensure the script is run as root
+if [ "$EUID" -ne 0 ]; then
+  echo "❌ Error: Please run as root"
+  exit 1
+fi
+
+# 2. Dependency Check: Install Ansible if missing
+if ! command -v ansible &> /dev/null; then
+    echo "⚙️ Ansible not found. Installing..."
+    dnf install ansible-core -y
+fi
+
+# 3. Execution: Run the Playbook
+echo "🚀 Starting Automation..."
+ansible-playbook -i inventory.ini install_web.yml
+```
+
+### 4. Execution & Verification
 Ran the playbook using ansible-playbook. The script successfully detected the missing service, installed it, and deployed the website content without manual intervention.
 
 ![Playbook Execution Output](playbook_run.png)
