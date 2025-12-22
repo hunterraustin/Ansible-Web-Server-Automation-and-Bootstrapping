@@ -1,4 +1,5 @@
 # Ansible-Web-Server-Automation
+Infrastructure as Code (IaC) project using Ansible to automate Apache web server provisioning on Rocky Linux.
 
 ## 🎯 Objective
 To eliminate manual server configuration by implementing Infrastructure as Code (IaC). This project uses Ansible to programmatically provision an Apache (HTTPD) web server on Rocky Linux 9, ensuring consistent deployment standards across the environment.
@@ -28,7 +29,11 @@ Wrote a comprehensive playbook to handle the full lifecycle of the web server:
 
 ### 3. Execution & Verification
 Ran the playbook using ansible-playbook. The script successfully detected the missing service, installed it, and deployed the website content without manual intervention.
-Verification of the hosted site:
+
+![Playbook Execution Output](playbook_run.png)
+
+*Verification of the hosted site:*
+![Website Verification](web_verify.png)
 
 ## 📂 Project Files
 - [install_web.yml]: The main Ansible playbook containing the automation logic.
