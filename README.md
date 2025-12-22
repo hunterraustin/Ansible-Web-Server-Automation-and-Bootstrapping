@@ -61,8 +61,8 @@ Ran the playbook using ansible-playbook. The script successfully detected the mi
 ![Website Verification](web_verify.png)
 
 ## 📂 Project Files
-- [install_web.yml]: The main Ansible playbook containing the automation logic.
-- [inventory.ini]: The host definition file.
+- [install_web.yml](install_web.yml): The main Ansible playbook containing the automation logic.
+- [inventory.ini](inventory.ini): The host definition file.
 
 ## 📚 References & Resources
 This project was built following industry-standard automation practices:
