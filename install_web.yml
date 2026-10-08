@@ -1,20 +1,22 @@
+---
 - name: Setup a Web Server
-  hosts: localhost
-  become: yes # This means "Run as Root/Sudo"
+  hosts: webservers
+  become: true
 
   tasks:
     - name: Install Apache Web Server
-      dnf:
+      ansible.builtin.dnf:
         name: httpd
         state: present
 
     - name: Start the Web Service
-      service:
+      ansible.builtin.service:
         name: httpd
         state: started
-        enabled: yes
+        enabled: true
 
     - name: Create a custom homepage
-      copy:
-        content: "<h1>Ansible configured this website!</h1>"
+      ansible.builtin.copy:
+        content: "<h1>Ansible configured this website!</h1>\n"
         dest: /var/www/html/index.html
+        mode: "0644"
